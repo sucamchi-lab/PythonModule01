@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-def ft_garden_intro() -> None:
+def main() -> None:
     name: str = "Rose"
     height: int = 25
     age: int = 30
@@ -12,4 +12,4 @@ def ft_garden_intro() -> None:
 
 
 if __name__ == "__main__":
-    ft_garden_intro()
+    main()

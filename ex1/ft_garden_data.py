@@ -1,5 +1,5 @@
 class Plant:
-    def __init__(self, name: str, height: int, day: int) -> None:
+    def __init__(self, name: str, height: float, day: int) -> None:
         self.name = name
         self.height = height
         self.day = day
@@ -8,7 +8,7 @@ class Plant:
         return f"{self.name}: {self.height}cm, {self.day} days old"
 
 
-def ft_garden_data() -> None:
+def main() -> None:
     rose = Plant("Rose", 25, 30)
     sunflower = Plant("Sunflower", 80, 45)
     cactus = Plant("Cactus", 15, 120)
@@ -19,4 +19,4 @@ def ft_garden_data() -> None:
 
 
 if __name__ == "__main__":
-    ft_garden_data()
+    main()

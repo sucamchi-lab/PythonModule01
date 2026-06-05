@@ -1,39 +1,39 @@
 class Plant:
-    def __init__(self, name: str, height: int, day: int) -> None:
+    def __init__(self, name: str, height: float, day: int) -> None:
         self._name = name
         self._height = height
         if height < 0:
-            print("Error: Height cannot be negative.")
-            self._height = 0
+            print("Error: Height cannot be negative")
+            self._height = 0.0
         self._day = day
         if day < 0:
-            print("Error: Age cannot be negative.")
+            print("Error: Age cannot be negative")
             self._day = 0
 
-    def get_height(self) -> int:
+    def get_height(self) -> float:
         return self._height
 
     def get_age(self) -> int:
         return self._day
 
-    def set_height(self, height: int) -> None:
+    def set_height(self, height: float) -> None:
         if height < 0:
-            print("Error: Height cannot be negative.")
-            print("Height update rejected.")
+            print(f"{self._name}: Error: Height cannot be negative")
+            print("Height update rejected")
             return
         self._height = height
-        print(f"Height updated: {self._height}cm.")
+        print(f"Height updated: {int(self._height)}cm")
 
     def set_age(self, day: int) -> None:
         if day < 0:
-            print("Error: Age cannot be negative.")
-            print("Age update rejected.")
+            print(f"{self._name}: Error: Age cannot be negative")
+            print("Age update rejected")
             return
         self._day = day
-        print(f"Age updated: {self._day} days.")
+        print(f"Age updated: {self._day} days")
 
     def show(self) -> str:
-        return (f"{self._name}: {round(float(self._height), 1)}cm, "
+        return (f"{self._name}: {round(self._height, 1)}cm, "
                 f"{self._day} days old")
 
     def grow(self) -> None:
@@ -45,10 +45,10 @@ class Plant:
 
 def ft_garden_security() -> None:
     print("=== Garden Security System ===")
-    rose = Plant("Rose", 15, 10)
+    rose = Plant("Rose", 15.0, 10)
     print("Plant created: " + rose.show())
     print()
-    rose.set_height(25)
+    rose.set_height(25.0)
     rose.set_age(30)
     print()
     print("Attempting to set negative height...")
@@ -56,6 +56,7 @@ def ft_garden_security() -> None:
     print()
     print("Attempting to set negative age...")
     rose.set_age(-10)
+    print()
     print("Current state: " + rose.show())
 
 
